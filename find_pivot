@@ -1,0 +1,21 @@
+Sub ListAllPivotTables()
+
+    Dim ws As Worksheet
+    Dim pt As PivotTable
+    Dim i As Integer
+
+    i = 1
+
+    For Each ws In ActiveWorkbook.Worksheets
+
+        For Each pt In ws.PivotTables
+
+            Debug.Print i & ". " & pt.Name & " on " & ws.Name; " on " & pt.TableRange1.Address
+
+            i = i + 1
+
+        Next pt
+
+    Next ws
+
+End Sub
